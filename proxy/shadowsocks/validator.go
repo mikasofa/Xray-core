@@ -23,8 +23,6 @@ type Validator struct {
 
 var ErrNotFound = newError("Not Found")
 
-var TotalBuffter = map[string]uint{}
-
 // Add a Shadowsocks user.
 func (v *Validator) Add(u *protocol.MemoryUser) error {
 	v.Lock()
@@ -35,7 +33,6 @@ func (v *Validator) Add(u *protocol.MemoryUser) error {
 		return newError("The cipher is not support Single-port Multi-user")
 	}
 	v.users = append(v.users, u)
-	TotalBuffter[u.Email] = 0
 
 	if !v.behaviorFused {
 		hashkdf := hmac.New(sha256.New, []byte("SSBSKDF"))
@@ -69,7 +66,6 @@ func (v *Validator) Del(email string) error {
 	}
 	ulen := len(v.users)
 
-	delete(TotalBuffter, v.users[idx].Email)
 	v.users[idx] = v.users[ulen-1]
 	v.users[ulen-1] = nil
 	v.users = v.users[:ulen-1]
@@ -111,10 +107,10 @@ func (v *Validator) Get(bs []byte, command protocol.RequestCommand) (u *protocol
 				u = user
 				err = account.CheckIV(iv)
 
-				TotalBuffter[user.Email]++
+				v.users[i].TotalBuffer++
 				if 0 != i {
-					if TotalBuffter[v.users[i-1].Email] < TotalBuffter[user.Email] {
-						v.users[i-1], v.users[i] = v.users[i], v.users[i]
+					if v.users[i-1].TotalBuffer < v.users[i].TotalBuffer {
+						v.users[i-1], v.users[i] = v.users[i], v.users[i-1]
 					}
 				}
 				return
@@ -132,8 +128,8 @@ func (v *Validator) Get(bs []byte, command protocol.RequestCommand) (u *protocol
 
 func (v *Validator) RestoreTotalBuffer() {
 	// clean up.
-	for k := range TotalBuffter {
-		TotalBuffter[k] = 0
+	for _, k := range v.users {
+		k.TotalBuffer = 0
 	}
 	return
 }
