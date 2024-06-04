@@ -23,6 +23,8 @@ type Validator struct {
 
 var ErrNotFound = newError("Not Found")
 
+var TotalBuffter = map[string]uint{}
+
 // Add a Shadowsocks user.
 func (v *Validator) Add(u *protocol.MemoryUser) error {
 	v.Lock()
@@ -33,6 +35,7 @@ func (v *Validator) Add(u *protocol.MemoryUser) error {
 		return newError("The cipher is not support Single-port Multi-user")
 	}
 	v.users = append(v.users, u)
+	TotalBuffter[u.Email] = 0
 
 	if !v.behaviorFused {
 		hashkdf := hmac.New(sha256.New, []byte("SSBSKDF"))
@@ -66,6 +69,7 @@ func (v *Validator) Del(email string) error {
 	}
 	ulen := len(v.users)
 
+	delete(TotalBuffter, v.users[idx].Email)
 	v.users[idx] = v.users[ulen-1]
 	v.users[ulen-1] = nil
 	v.users = v.users[:ulen-1]
@@ -78,7 +82,7 @@ func (v *Validator) Get(bs []byte, command protocol.RequestCommand) (u *protocol
 	v.RLock()
 	defer v.RUnlock()
 
-	for _, user := range v.users {
+	for i, user := range v.users {
 		if account := user.Account.(*MemoryAccount); account.Cipher.IsAEAD() {
 			// AEAD payload decoding requires the payload to be over 32 bytes
 			if len(bs) < 32 {
@@ -106,6 +110,13 @@ func (v *Validator) Get(bs []byte, command protocol.RequestCommand) (u *protocol
 			if matchErr == nil {
 				u = user
 				err = account.CheckIV(iv)
+
+				TotalBuffter[user.Email]++
+				if 0 != i {
+					if TotalBuffter[v.users[i-1].Email] < TotalBuffter[user.Email] {
+						v.users[i-1], v.users[i] = v.users[i], v.users[i]
+					}
+				}
 				return
 			}
 		} else {
@@ -117,6 +128,13 @@ func (v *Validator) Get(bs []byte, command protocol.RequestCommand) (u *protocol
 	}
 
 	return nil, nil, nil, 0, ErrNotFound
+}
+
+func (v *Validator) RestoreTotalBuffer() {
+	for k := range TotalBuffter {
+		TotalBuffter[k] = 0
+	}
+	return
 }
 
 func (v *Validator) GetBehaviorSeed() uint64 {
