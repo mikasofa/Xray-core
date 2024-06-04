@@ -131,6 +131,7 @@ func (v *Validator) Get(bs []byte, command protocol.RequestCommand) (u *protocol
 }
 
 func (v *Validator) RestoreTotalBuffer() {
+	// clean up.
 	for k := range TotalBuffter {
 		TotalBuffter[k] = 0
 	}
