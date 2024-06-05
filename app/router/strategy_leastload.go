@@ -6,11 +6,11 @@ import (
 	"sort"
 	"time"
 
-	"github.com/mikasofa/xray-core/app/observatory"
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/dice"
-	"github.com/mikasofa/xray-core/core"
-	"github.com/mikasofa/xray-core/features/extension"
+	"github.com/xtls/xray-core/app/observatory"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/dice"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/extension"
 )
 
 // LeastLoadStrategy represents a least load balancing strategy

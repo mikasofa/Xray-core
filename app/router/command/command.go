@@ -1,15 +1,15 @@
 package command
 
-//go:generate go run github.com/mikasofa/xray-core/common/errors/errorgen
+//go:generate go run github.com/xtls/xray-core/common/errors/errorgen
 
 import (
 	"context"
 	"time"
 
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/core"
-	"github.com/mikasofa/xray-core/features/routing"
-	"github.com/mikasofa/xray-core/features/stats"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/features/stats"
 	"google.golang.org/grpc"
 )
 

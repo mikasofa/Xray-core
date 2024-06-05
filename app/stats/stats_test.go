@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/mikasofa/xray-core/app/stats"
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/features/stats"
+	. "github.com/xtls/xray-core/app/stats"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/features/stats"
 )
 
 func TestInterface(t *testing.T) {

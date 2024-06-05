@@ -1,6 +1,6 @@
 package inbound
 
-//go:generate go run github.com/mikasofa/xray-core/common/errors/errorgen
+//go:generate go run github.com/xtls/xray-core/common/errors/errorgen
 
 import (
 	"context"
@@ -9,23 +9,23 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/buf"
-	"github.com/mikasofa/xray-core/common/errors"
-	"github.com/mikasofa/xray-core/common/log"
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/common/protocol"
-	"github.com/mikasofa/xray-core/common/session"
-	"github.com/mikasofa/xray-core/common/signal"
-	"github.com/mikasofa/xray-core/common/task"
-	"github.com/mikasofa/xray-core/common/uuid"
-	"github.com/mikasofa/xray-core/core"
-	feature_inbound "github.com/mikasofa/xray-core/features/inbound"
-	"github.com/mikasofa/xray-core/features/policy"
-	"github.com/mikasofa/xray-core/features/routing"
-	"github.com/mikasofa/xray-core/proxy/vmess"
-	"github.com/mikasofa/xray-core/proxy/vmess/encoding"
-	"github.com/mikasofa/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/log"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/common/signal"
+	"github.com/xtls/xray-core/common/task"
+	"github.com/xtls/xray-core/common/uuid"
+	"github.com/xtls/xray-core/core"
+	feature_inbound "github.com/xtls/xray-core/features/inbound"
+	"github.com/xtls/xray-core/features/policy"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/proxy/vmess"
+	"github.com/xtls/xray-core/proxy/vmess/encoding"
+	"github.com/xtls/xray-core/transport/internet/stat"
 )
 
 type userByEmail struct {

@@ -4,10 +4,10 @@ import (
 	"context"
 	"os"
 
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/transport/internet"
-	"github.com/mikasofa/xray-core/transport/internet/stat"
 	"github.com/sagernet/sing/common/uot"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/stat"
 )
 
 func (h *Handler) getUoTConnection(ctx context.Context, dest net.Destination) (stat.Connection, error) {

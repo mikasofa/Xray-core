@@ -5,8 +5,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/task"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/task"
 )
 
 type ActivityUpdater interface {

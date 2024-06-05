@@ -1,8 +1,8 @@
 package conf
 
 import (
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/proxy/dns"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/proxy/dns"
 	"google.golang.org/protobuf/proto"
 )
 

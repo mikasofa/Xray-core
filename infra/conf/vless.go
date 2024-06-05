@@ -8,13 +8,13 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/common/protocol"
-	"github.com/mikasofa/xray-core/common/serial"
-	"github.com/mikasofa/xray-core/common/uuid"
-	"github.com/mikasofa/xray-core/proxy/vless"
-	"github.com/mikasofa/xray-core/proxy/vless/inbound"
-	"github.com/mikasofa/xray-core/proxy/vless/outbound"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/uuid"
+	"github.com/xtls/xray-core/proxy/vless"
+	"github.com/xtls/xray-core/proxy/vless/inbound"
+	"github.com/xtls/xray-core/proxy/vless/outbound"
 	"google.golang.org/protobuf/proto"
 )
 

@@ -1,6 +1,6 @@
 package toml
 
-import "github.com/mikasofa/xray-core/common/errors"
+import "github.com/xtls/xray-core/common/errors"
 
 type errPathObjHolder struct{}
 

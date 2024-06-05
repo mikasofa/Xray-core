@@ -6,11 +6,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/buf"
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/common/protocol"
-	"github.com/mikasofa/xray-core/transport/pipe"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/transport/pipe"
 )
 
 type SessionManager struct {

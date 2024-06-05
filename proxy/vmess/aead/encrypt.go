@@ -9,7 +9,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/mikasofa/xray-core/common"
+	"github.com/xtls/xray-core/common"
 )
 
 func SealVMessAEADHeader(key [16]byte, data []byte) []byte {

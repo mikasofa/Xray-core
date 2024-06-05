@@ -3,10 +3,10 @@ package udp
 import (
 	"context"
 
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/transport/internet"
-	"github.com/mikasofa/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/stat"
 )
 
 func init() {

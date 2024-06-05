@@ -4,11 +4,11 @@ import (
 	"context"
 	"sync"
 
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/common/net/cnc"
-	"github.com/mikasofa/xray-core/common/signal/done"
-	"github.com/mikasofa/xray-core/transport"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/net/cnc"
+	"github.com/xtls/xray-core/common/signal/done"
+	"github.com/xtls/xray-core/transport"
 )
 
 // OutboundListener is a net.Listener for listening gRPC connections.

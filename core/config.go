@@ -4,10 +4,10 @@ import (
 	"io"
 	"strings"
 
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/buf"
-	"github.com/mikasofa/xray-core/common/cmdarg"
-	"github.com/mikasofa/xray-core/main/confloader"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/cmdarg"
+	"github.com/xtls/xray-core/main/confloader"
 	"google.golang.org/protobuf/proto"
 )
 

@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/common/platform"
-	"github.com/mikasofa/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/platform"
+	"github.com/xtls/xray-core/common/protocol"
 )
 
 type StringList []string

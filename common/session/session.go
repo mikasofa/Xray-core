@@ -1,14 +1,14 @@
 // Package session provides functions for sessions of incoming requests.
-package session // import "github.com/mikasofa/xray-core/common/session"
+package session // import "github.com/xtls/xray-core/common/session"
 
 import (
 	"context"
 	"math/rand"
 
-	"github.com/mikasofa/xray-core/common/errors"
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/common/protocol"
-	"github.com/mikasofa/xray-core/common/signal"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/signal"
 )
 
 // ID of a session.

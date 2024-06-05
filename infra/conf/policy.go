@@ -1,7 +1,7 @@
 package conf
 
 import (
-	"github.com/mikasofa/xray-core/app/policy"
+	"github.com/xtls/xray-core/app/policy"
 )
 
 type Policy struct {

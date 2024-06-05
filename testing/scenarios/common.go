@@ -14,16 +14,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/mikasofa/xray-core/app/dispatcher"
-	"github.com/mikasofa/xray-core/app/proxyman"
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/errors"
-	"github.com/mikasofa/xray-core/common/log"
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/common/retry"
-	"github.com/mikasofa/xray-core/common/serial"
-	"github.com/mikasofa/xray-core/common/units"
-	core "github.com/mikasofa/xray-core/core"
+	"github.com/xtls/xray-core/app/dispatcher"
+	"github.com/xtls/xray-core/app/proxyman"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/log"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/retry"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/units"
+	core "github.com/xtls/xray-core/core"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -120,7 +120,7 @@ func genTestBinaryPath() {
 }
 
 func GetSourcePath() string {
-	return filepath.Join("github.com", "mikasofa", "xray-core", "main")
+	return filepath.Join("github.com", "xtls", "xray-core", "main")
 }
 
 func CloseAllServers(servers []*exec.Cmd) {

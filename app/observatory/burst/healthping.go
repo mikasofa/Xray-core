@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/mikasofa/xray-core/common/dice"
+	"github.com/xtls/xray-core/common/dice"
 )
 
 // HealthPingSettings holds settings for health Checker

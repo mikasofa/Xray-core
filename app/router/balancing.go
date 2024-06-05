@@ -4,11 +4,11 @@ import (
 	"context"
 	sync "sync"
 
-	"github.com/mikasofa/xray-core/app/observatory"
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/core"
-	"github.com/mikasofa/xray-core/features/extension"
-	"github.com/mikasofa/xray-core/features/outbound"
+	"github.com/xtls/xray-core/app/observatory"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/extension"
+	"github.com/xtls/xray-core/features/outbound"
 )
 
 type BalancingStrategy interface {

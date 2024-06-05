@@ -1,7 +1,7 @@
 // Package dns is an implementation of core.DNS feature.
 package dns
 
-//go:generate go run github.com/mikasofa/xray-core/common/errors/errorgen
+//go:generate go run github.com/xtls/xray-core/common/errors/errorgen
 
 import (
 	"context"
@@ -9,14 +9,14 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/mikasofa/xray-core/app/router"
-	"github.com/mikasofa/xray-core/common"
-	"github.com/mikasofa/xray-core/common/errors"
-	"github.com/mikasofa/xray-core/common/net"
-	"github.com/mikasofa/xray-core/common/session"
-	"github.com/mikasofa/xray-core/common/strmatcher"
-	"github.com/mikasofa/xray-core/features"
-	"github.com/mikasofa/xray-core/features/dns"
+	"github.com/xtls/xray-core/app/router"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/common/strmatcher"
+	"github.com/xtls/xray-core/features"
+	"github.com/xtls/xray-core/features/dns"
 )
 
 // DNS is a DNS rely server.
