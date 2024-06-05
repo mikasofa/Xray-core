@@ -112,7 +112,6 @@ func (i *MultiUserInbound) AddUser(ctx context.Context, u *protocol.MemoryUser) 
 }
 
 func (i *MultiUserInbound) RestoreTotalBuffer() {
-	newError("RestoreTotalBuffer method is only allowed to use with Shadowsocks.")
 	return
 }
 

@@ -171,7 +171,6 @@ func (h *Handler) RemoveUser(ctx context.Context, e string) error {
 }
 
 func (h *Handler) RestoreTotalBuffer() {
-	newError("RestoreTotalBuffer method is only allowed to use with Shadowsocks.")
 	return
 }
 
