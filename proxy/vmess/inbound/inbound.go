@@ -169,6 +169,11 @@ func (h *Handler) RemoveUser(ctx context.Context, email string) error {
 	return nil
 }
 
+func (h *Handler) RestoreTotalBuffer() {
+	newError("RestoreTotalBuffer method is only allowed to use with Shadowsocks.")
+	return
+}
+
 func transferResponse(timer signal.ActivityUpdater, session *encoding.ServerSession, request *protocol.RequestHeader, response *protocol.ResponseHeader, input buf.Reader, output *buf.BufferedWriter) error {
 	session.EncodeResponseHeader(response, output)
 

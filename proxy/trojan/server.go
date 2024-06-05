@@ -125,6 +125,11 @@ func (s *Server) RemoveUser(ctx context.Context, e string) error {
 	return s.validator.Del(e)
 }
 
+func (s *Server) RestoreTotalBuffer() {
+	newError("RestoreTotalBuffer method is only allowed to use with Shadowsocks.")
+	return
+}
+
 // Network implements proxy.Inbound.Network().
 func (s *Server) Network() []net.Network {
 	return []net.Network{net.Network_TCP, net.Network_UNIX}

@@ -111,6 +111,11 @@ func (i *MultiUserInbound) AddUser(ctx context.Context, u *protocol.MemoryUser) 
 	return nil
 }
 
+func (i *MultiUserInbound) RestoreTotalBuffer() {
+	newError("RestoreTotalBuffer method is only allowed to use with Shadowsocks.")
+	return
+}
+
 // RemoveUser implements proxy.UserManager.RemoveUser().
 func (i *MultiUserInbound) RemoveUser(ctx context.Context, email string) error {
 	if email == "" {

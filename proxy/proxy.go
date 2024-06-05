@@ -78,6 +78,8 @@ type UserManager interface {
 
 	// RemoveUser removes a user by email.
 	RemoveUser(context.Context, string) error
+
+	RestoreTotalBuffer()
 }
 
 type GetInbound interface {
