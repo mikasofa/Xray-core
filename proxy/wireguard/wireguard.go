@@ -11,7 +11,7 @@ import (
 	"golang.zx2c4.com/wireguard/device"
 )
 
-//go:generate go run github.com/xtls/xray-core/common/errors/errorgen
+//go:generate go run github.com/mikasofa/xray-core/common/errors/errorgen
 
 var wgLogger = &device.Logger{
 	Verbosef: func(format string, args ...any) {
