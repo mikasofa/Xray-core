@@ -1,8 +1,8 @@
 package encoding
 
 import (
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
+	"github.com/mikasofa/xray-core/common/net"
+	"github.com/mikasofa/xray-core/common/protocol"
 )
 
 //go:generate go run github.com/xtls/xray-core/common/errors/errorgen

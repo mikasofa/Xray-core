@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
+	"github.com/mikasofa/xray-core/common"
+	"github.com/mikasofa/xray-core/common/buf"
 )
 
 const (

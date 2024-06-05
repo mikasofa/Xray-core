@@ -6,8 +6,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/platform"
+	"github.com/mikasofa/xray-core/common/buf"
+	"github.com/mikasofa/xray-core/common/platform"
 )
 
 //go:generate go run github.com/xtls/xray-core/common/errors/errorgen

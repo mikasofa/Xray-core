@@ -7,10 +7,10 @@ import (
 	"context"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/transport"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/mikasofa/xray-core/common"
+	"github.com/mikasofa/xray-core/common/session"
+	"github.com/mikasofa/xray-core/transport"
+	"github.com/mikasofa/xray-core/transport/internet"
 )
 
 // Handler is an outbound connection that silently swallow the entire payload.
@@ -32,9 +32,9 @@ func New(ctx context.Context, config *Config) (*Handler, error) {
 // Process implements OutboundHandler.Dispatch().
 func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer internet.Dialer) error {
 	outbounds := session.OutboundsFromContext(ctx)
-	ob := outbounds[len(outbounds) - 1]
+	ob := outbounds[len(outbounds)-1]
 	ob.Name = "blackhole"
-	
+
 	nBytes := h.response.WriteTo(link.Writer)
 	if nBytes > 0 {
 		// Sleep a little here to make sure the response is sent to client.

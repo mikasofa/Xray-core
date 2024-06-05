@@ -8,10 +8,10 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/proxy/trojan"
+	"github.com/mikasofa/xray-core/common/net"
+	"github.com/mikasofa/xray-core/common/protocol"
+	"github.com/mikasofa/xray-core/common/serial"
+	"github.com/mikasofa/xray-core/proxy/trojan"
 	"google.golang.org/protobuf/proto"
 )
 

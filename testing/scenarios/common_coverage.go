@@ -8,7 +8,7 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/xtls/xray-core/common/uuid"
+	"github.com/mikasofa/xray-core/common/uuid"
 )
 
 func BuildXray() error {

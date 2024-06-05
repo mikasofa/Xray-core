@@ -10,26 +10,26 @@ import (
 	"time"
 	"unsafe"
 
+	"github.com/mikasofa/xray-core/common"
+	"github.com/mikasofa/xray-core/common/buf"
+	"github.com/mikasofa/xray-core/common/net"
+	"github.com/mikasofa/xray-core/common/protocol"
+	"github.com/mikasofa/xray-core/common/retry"
+	"github.com/mikasofa/xray-core/common/session"
+	"github.com/mikasofa/xray-core/common/signal"
+	"github.com/mikasofa/xray-core/common/task"
+	"github.com/mikasofa/xray-core/common/xudp"
+	"github.com/mikasofa/xray-core/core"
+	"github.com/mikasofa/xray-core/features/policy"
+	"github.com/mikasofa/xray-core/proxy"
+	"github.com/mikasofa/xray-core/proxy/vless"
+	"github.com/mikasofa/xray-core/proxy/vless/encoding"
+	"github.com/mikasofa/xray-core/transport"
+	"github.com/mikasofa/xray-core/transport/internet"
+	"github.com/mikasofa/xray-core/transport/internet/reality"
+	"github.com/mikasofa/xray-core/transport/internet/stat"
+	"github.com/mikasofa/xray-core/transport/internet/tls"
 	utls "github.com/refraction-networking/utls"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/retry"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/common/xudp"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/policy"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/proxy/vless"
-	"github.com/xtls/xray-core/proxy/vless/encoding"
-	"github.com/xtls/xray-core/transport"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/reality"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	"github.com/xtls/xray-core/transport/internet/tls"
 )
 
 func init() {
@@ -71,7 +71,7 @@ func New(ctx context.Context, config *Config) (*Handler, error) {
 // Process implements proxy.Outbound.Process().
 func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer internet.Dialer) error {
 	outbounds := session.OutboundsFromContext(ctx)
-	ob := outbounds[len(outbounds) - 1]
+	ob := outbounds[len(outbounds)-1]
 	if !ob.Target.IsValid() {
 		return newError("target not specified").AtError()
 	}

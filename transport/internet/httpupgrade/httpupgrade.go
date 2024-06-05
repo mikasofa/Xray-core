@@ -3,7 +3,7 @@ package httpupgrade
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common"
+	"github.com/mikasofa/xray-core/common"
 )
 
 //go:generate go run github.com/xtls/xray-core/common/errors/errorgen

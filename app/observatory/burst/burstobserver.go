@@ -2,13 +2,13 @@ package burst
 
 import (
 	"context"
-	
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/app/observatory"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/signal/done"
-	"github.com/xtls/xray-core/features/extension"
-	"github.com/xtls/xray-core/features/outbound"
+
+	"github.com/mikasofa/xray-core/app/observatory"
+	"github.com/mikasofa/xray-core/common"
+	"github.com/mikasofa/xray-core/common/signal/done"
+	"github.com/mikasofa/xray-core/core"
+	"github.com/mikasofa/xray-core/features/extension"
+	"github.com/mikasofa/xray-core/features/outbound"
 	"google.golang.org/protobuf/proto"
 	"sync"
 )

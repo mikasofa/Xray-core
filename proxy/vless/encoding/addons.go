@@ -4,10 +4,10 @@ import (
 	"context"
 	"io"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/proxy/vless"
+	"github.com/mikasofa/xray-core/common/buf"
+	"github.com/mikasofa/xray-core/common/protocol"
+	"github.com/mikasofa/xray-core/proxy"
+	"github.com/mikasofa/xray-core/proxy/vless"
 	"google.golang.org/protobuf/proto"
 )
 

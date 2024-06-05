@@ -1,8 +1,8 @@
 package quic
 
 import (
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/mikasofa/xray-core/common"
+	"github.com/mikasofa/xray-core/transport/internet"
 )
 
 //go:generate go run github.com/xtls/xray-core/common/errors/errorgen

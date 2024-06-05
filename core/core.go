@@ -15,7 +15,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/xtls/xray-core/common/serial"
+	"github.com/mikasofa/xray-core/common/serial"
 )
 
 var (

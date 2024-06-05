@@ -4,20 +4,20 @@ import (
 	"context"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/retry"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/common/task"
-	core "github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/policy"
-	"github.com/xtls/xray-core/transport"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/mikasofa/xray-core/common"
+	"github.com/mikasofa/xray-core/common/buf"
+	"github.com/mikasofa/xray-core/common/errors"
+	"github.com/mikasofa/xray-core/common/net"
+	"github.com/mikasofa/xray-core/common/protocol"
+	"github.com/mikasofa/xray-core/common/retry"
+	"github.com/mikasofa/xray-core/common/session"
+	"github.com/mikasofa/xray-core/common/signal"
+	"github.com/mikasofa/xray-core/common/task"
+	core "github.com/mikasofa/xray-core/core"
+	"github.com/mikasofa/xray-core/features/policy"
+	"github.com/mikasofa/xray-core/transport"
+	"github.com/mikasofa/xray-core/transport/internet"
+	"github.com/mikasofa/xray-core/transport/internet/stat"
 )
 
 // Client is a inbound handler for trojan protocol
@@ -51,7 +51,7 @@ func NewClient(ctx context.Context, config *ClientConfig) (*Client, error) {
 // Process implements OutboundHandler.Process().
 func (c *Client) Process(ctx context.Context, link *transport.Link, dialer internet.Dialer) error {
 	outbounds := session.OutboundsFromContext(ctx)
-	ob := outbounds[len(outbounds) - 1]
+	ob := outbounds[len(outbounds)-1]
 	if !ob.Target.IsValid() {
 		return newError("target not specified")
 	}
