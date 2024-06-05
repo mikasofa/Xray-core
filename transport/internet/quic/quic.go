@@ -5,7 +5,7 @@ import (
 	"github.com/mikasofa/xray-core/transport/internet"
 )
 
-//go:generate go run github.com/xtls/xray-core/common/errors/errorgen
+//go:generate go run github.com/mikasofa/xray-core/common/errors/errorgen
 
 // Here is some modification needs to be done before update quic vendor.
 // * use bytespool in buffer_pool.go

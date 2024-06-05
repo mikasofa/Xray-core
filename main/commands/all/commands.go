@@ -6,7 +6,7 @@ import (
 	"github.com/mikasofa/xray-core/main/commands/base"
 )
 
-// go:generate go run github.com/xtls/xray-core/common/errors/errorgen
+// go:generate go run github.com/mikasofa/xray-core/common/errors/errorgen
 
 func init() {
 	base.RootCommand.Commands = append(
