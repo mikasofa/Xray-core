@@ -55,6 +55,17 @@ func ContextWithOutbounds(ctx context.Context, outbounds []*Outbound) context.Co
 	return context.WithValue(ctx, outboundSessionKey, outbounds)
 }
 
+func OutboundFromContext(ctx context.Context) *Outbound {
+	if outbound, ok := ctx.Value(outboundSessionKey).(*Outbound); ok {
+		return outbound
+	}
+	return nil
+}
+
+func ContextWithOutbound(ctx context.Context, outbound *Outbound) context.Context {
+	return context.WithValue(ctx, outboundSessionKey, outbound)
+}
+
 func OutboundsFromContext(ctx context.Context) []*Outbound {
 	if outbounds, ok := ctx.Value(outboundSessionKey).([]*Outbound); ok {
 		return outbounds
