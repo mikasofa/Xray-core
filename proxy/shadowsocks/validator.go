@@ -106,18 +106,17 @@ func (v *Validator) Get(bs []byte, command protocol.RequestCommand) (u *protocol
 			if matchErr == nil {
 				u = user
 				err = account.CheckIV(iv)
-
-				v.users[i].TotalBuffer++
-				if 0 != i {
-					if v.users[i-1].TotalBuffer < v.users[i].TotalBuffer {
-						v.users[i-1], v.users[i] = v.users[i], v.users[i-1]
-					}
-				}
 				return
 			}
 		} else {
 			u = user
 			ivLen = user.Account.(*MemoryAccount).Cipher.IVSize()
+			v.users[i].TotalBuffer++
+			if 0 != i {
+				if v.users[i-1].TotalBuffer < v.users[i].TotalBuffer {
+					v.users[i-1], v.users[i] = v.users[i], v.users[i-1]
+				}
+			}
 			// err = user.Account.(*MemoryAccount).CheckIV(bs[:ivLen]) // The IV size of None Cipher is 0.
 			return
 		}
